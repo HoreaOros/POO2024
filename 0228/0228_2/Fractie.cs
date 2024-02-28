@@ -88,12 +88,12 @@ internal class Fractie : IEquatable<Fractie>
     }
 
 
-    public override bool Equals(object obj)
+    public override bool Equals(object? obj)
     {
         return this.Equals(obj as Fractie);
     }
 
-    public bool Equals(Fractie p)
+    public bool Equals(Fractie? p)
     {
         if (p is null)
         {
@@ -136,4 +136,23 @@ internal class Fractie : IEquatable<Fractie>
         return lhs.Equals(rhs);
     }
     public static bool operator !=(Fractie lhs, Fractie rhs) => !(lhs == rhs);
+
+    public static bool operator <(Fractie lhs, Fractie rhs)
+    {
+        return lhs.numarator * rhs.numitor < lhs.numitor * rhs.numarator;
+    }
+    public static bool operator >(Fractie lhs, Fractie rhs)
+    {
+        return lhs.numarator * lhs.numitor > lhs.numitor * rhs.numarator;
+    }
+    public static bool operator <=(Fractie lhs, Fractie rhs)
+    {
+        return lhs < rhs || lhs == rhs;
+    }
+    public static bool operator >=(Fractie lhs, Fractie rhs)
+    {
+        return lhs > rhs || lhs == rhs;
+    }
 }
+
+

@@ -37,10 +37,10 @@ Fractie f9 = f6 ^ 3;
 Console.WriteLine(f9);
 
 
-int a = 1, b = 1;
 
 f2 = new Fractie(2, 3);
 f3 = new Fractie(2, 3);
+
 
 
 // Operatii de egalitate, inegalitate, relationali
@@ -49,8 +49,8 @@ Console.WriteLine($"{f2} == {f3} -> {b1}");
 bool b2 = f2 != f3;
 Console.WriteLine($"{f2} != {f3} -> {b2}");
 
-//bool b3 = f2 < f3;
-//Console.WriteLine($"{f2} < {f3} -> {b3}");
+bool b3 = f2 < f3;
+Console.WriteLine($"{f2} < {f3} -> {b3}");
 
-//bool b4 = f2 <= f3;
-//Console.WriteLine($"{f2} <= {f3} -> {b4}");
+bool b4 = f2 <= f3;
+Console.WriteLine($"{f2} <= {f3} -> {b4}");
