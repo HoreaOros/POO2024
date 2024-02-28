@@ -21,14 +21,15 @@ internal class Rational: IEquatable<Rational>
 
         if(token.Length == 1)
         {
-            bool r = int.TryParse(token[0], out numitor);
+            bool r = int.TryParse(token[0], out numarator);
+            numitor = 1;
             if (r == false)
                 throw new ArgumentException("Numaratorul nu este un numar valid");
         }
         else if(token.Length == 2)
         {
-            bool r1 = int.TryParse(token[0], out numitor);
-            bool r2 = int.TryParse(token[1], out numarator);
+            bool r1 = int.TryParse(token[0], out numarator);
+            bool r2 = int.TryParse(token[1], out numitor);
             if (r1 == false || r2 == false)
                 throw new ArgumentException("Numarul Rational nu este valid");
         }
@@ -123,4 +124,24 @@ internal class Rational: IEquatable<Rational>
         return lhs.Equals(rhs);
     }
     public static bool operator !=(Rational lhs, Rational rhs) => !(lhs == rhs);
+    public static bool operator<(Rational lhs, Rational rhs)
+    {
+        return lhs.numarator * rhs.numitor < lhs.numitor * rhs.numarator;
+    }
+    public static bool operator >(Rational lhs, Rational rhs)
+    {
+        return lhs.numarator * lhs.numitor > lhs.numitor * rhs.numarator;
+    }
+    public static bool operator <=(Rational lhs, Rational rhs)
+    {
+        return lhs < rhs || lhs == rhs;
+    }
+    public static bool operator >=(Rational lhs, Rational rhs)
+    {
+        return lhs > rhs || lhs == rhs;
+    }
+    public override string ToString()
+    {
+        return $"({numarator} / {numitor})";
+    }
 }
