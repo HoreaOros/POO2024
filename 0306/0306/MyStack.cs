@@ -1,6 +1,6 @@
 ﻿using System.Diagnostics;
 
-public class MyStack<T>
+public class MyStack<T> : IStack<T>
 {
     private T[] data;
     private int capacity = 16;

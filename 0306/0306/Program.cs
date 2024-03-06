@@ -45,8 +45,24 @@ MyStack<string> mss = new MyStack<string>();
 mss.Push("hello");
 mss.Push("world");
 
-Console.WriteLine(mss.Pop());
-Console.WriteLine(mss.Pop());
+//Console.WriteLine(mss.Pop());
+//Console.WriteLine(mss.Pop());
+F(mss);
+
+StackLL<int> sll = new StackLL<int>();
+sll.Push(5);
+sll.Push(6);
+sll.Push(7);
+
+while(sll.Count > 0)
+{
+    Console.WriteLine(sll.Pop());
+}
 
 
 Console.ReadKey();
+
+static void F<T>(IStack<T> stack)
+{
+    Console.WriteLine(stack.Peek());
+}
