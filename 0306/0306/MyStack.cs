@@ -5,26 +5,39 @@ public class MyStack
     private int[] data;
     private int capacity = 16;
     private int size = 0;
+    /// <summary>
+    /// Constructor implicit
+    /// </summary>
     public MyStack()
     {
-        Debug.Write($"Creating new stack with capacity {capacity}...");
+        Console.Write($"Creating new stack with capacity {capacity}...");
         data = new int[capacity];
-        Debug.WriteLine("success!");
+        Console.WriteLine("success!");
     }
+    /// <summary>
+    /// Intoarce si elimina elementul din varful stivei
+    /// </summary>
+    /// <returns></returns>
+    /// <exception cref="StackEmptyException"></exception>
     public int Pop()
     {
         Console.WriteLine("Trying to Pop the stack...");
         if (size > 0)
         {
-            size--;
+            int ret = data[size - 1];
             if (size == capacity / 4)
                 resize(capacity / 2);
             Console.WriteLine("success!");
-            return data[size];
+            size--;
+            return ret;
         }
         else
             throw new StackEmptyException("A fost apelata functia Pop pe o stiva goala");
     }
+    /// <summary>
+    /// Adauga o noua valoare in stiva
+    /// </summary>
+    /// <param name="value">Valoarea care se adauga</param>
     public void Push(int value)
     {
         Console.WriteLine($"Trying to push {value} into the stack...");

@@ -24,5 +24,13 @@ while(ms.Count > 0)
     Console.WriteLine(ms.Pop());
 }
 
+// Adaug 100 de elemente in stiva
+for (int i = 0; i < 100; i++)
+    ms.Push(i);
 
+
+// Incerc sa elimin 101 elemente din stiva
+for(int i = 0; i <= 100; i++)
+    Console.WriteLine(ms.Pop());
+Console.ReadKey();
 
