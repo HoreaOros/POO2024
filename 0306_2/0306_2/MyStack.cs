@@ -1,4 +1,4 @@
-﻿public class MyStack<T>
+﻿public class MyStack<T> : IStack<T>
 {
     private int size = 0;
     private T[] data;
@@ -33,7 +33,7 @@
     {
         Console.WriteLine($"Trying to resize stack. Old value {capacity}, New value {newcapacity}");
         T[] newdata = new T[newcapacity];
-        for(int i = 0; i < size; i++)
+        for (int i = 0; i < size; i++)
             newdata[i] = data[i];
         capacity = newcapacity;
         data = newdata;

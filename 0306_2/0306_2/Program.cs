@@ -38,3 +38,16 @@ catch (StackEmptyException e)
 MyStack<string> ss = new MyStack<string>();
 ss.Push("hello");
 ss.Push("world");
+
+
+mystack.Push(10);
+F(mystack);
+F(ss);
+
+
+
+
+void F<T>(IStack<T> stack)
+{
+    Console.WriteLine($"F(): {stack.Peek()}");
+}
