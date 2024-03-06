@@ -25,7 +25,7 @@
             return ret;
         }
         else
-            throw new StackEmptyException("Peek(): Stiva este goala");
+            throw new StackEmptyException("Pop(): Stiva este goala");
     }
 
     public void Push(T value)

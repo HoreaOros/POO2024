@@ -54,15 +54,22 @@ sll.Push(5);
 sll.Push(6);
 sll.Push(7);
 
+
+F<int>(sll);
+
 while(sll.Count > 0)
 {
     Console.WriteLine(sll.Pop());
 }
 
 
+
+
 Console.ReadKey();
 
 static void F<T>(IStack<T> stack)
 {
+    Console.WriteLine("Entering F<T>()");
     Console.WriteLine(stack.Peek());
+    Console.WriteLine("Exiting F<T>()");
 }
