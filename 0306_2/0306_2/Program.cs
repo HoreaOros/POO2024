@@ -13,7 +13,7 @@ stack.Pop();
 */
 
 
-MyStack mystack = new MyStack();
+MyStack<int> mystack = new MyStack<int>();
 
 for (int i = 0; i < 100; i++)
     mystack.Push(i);
@@ -25,4 +25,16 @@ while(mystack.Count > 0)
     Console.WriteLine(mystack.Pop());
 }
 
-mystack.Pop();
+try
+{
+	mystack.Pop();
+}
+catch (StackEmptyException e)
+{
+    Console.WriteLine(e.Message);
+}
+
+
+MyStack<string> ss = new MyStack<string>();
+ss.Push("hello");
+ss.Push("world");

@@ -1,15 +1,15 @@
-﻿public class MyStack
+﻿public class MyStack<T>
 {
     private int size = 0;
-    private int[] data;
+    private T[] data;
     private int capacity = 16;
     public int Count => size;
     public MyStack()
     {
-        data = new int[capacity];
+        data = new T[capacity];
     }
 
-    public void Push(int value)
+    public void Push(T value)
     {
         Console.WriteLine($"Trying to push {value} onto the stack...");
         if (size == capacity)
@@ -21,7 +21,7 @@
         Console.WriteLine("Success - push");
     }
 
-    public int Peek()
+    public T Peek()
     {
         if (size > 0)
             return data[size - 1];
@@ -32,7 +32,7 @@
     private void resize(int newcapacity)
     {
         Console.WriteLine($"Trying to resize stack. Old value {capacity}, New value {newcapacity}");
-        int[] newdata = new int[newcapacity];
+        T[] newdata = new T[newcapacity];
         for(int i = 0; i < size; i++)
             newdata[i] = data[i];
         capacity = newcapacity;
@@ -40,12 +40,12 @@
         Console.WriteLine("Success - resize!");
     }
 
-    public int Pop()
+    public T Pop()
     {
         Console.WriteLine("Trying to pop the stack");
         if (size > 0)
         {
-            int ret = data[size - 1];
+            T ret = data[size - 1];
             size--;
             if (size == capacity / 4)
                 resize(capacity / 2);
