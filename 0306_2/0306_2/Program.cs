@@ -45,7 +45,13 @@ F(mystack);
 F(ss);
 
 
+StackLL<int> sll = new StackLL<int>();
+for (int i = 0; i < 10; i++)
+{
+    sll.Push(i);
+}
 
+F(sll);
 
 void F<T>(IStack<T> stack)
 {
