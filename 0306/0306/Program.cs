@@ -11,7 +11,7 @@ while (st.Count > 0)
 }
 */
 
-MyStack ms = new MyStack();
+MyStack<int> ms = new MyStack<int>();
 
 ms.Push(5);
 ms.Push(6);
@@ -29,8 +29,24 @@ for (int i = 0; i < 100; i++)
     ms.Push(i);
 
 
-// Incerc sa elimin 101 elemente din stiva
-for(int i = 0; i <= 100; i++)
-    Console.WriteLine(ms.Pop());
-Console.ReadKey();
+try
+{
+	// Incerc sa elimin 101 elemente din stiva
+	for (int i = 0; i <= 100; i++)
+		Console.WriteLine(ms.Pop());
+}
+catch (StackEmptyException e)
+{
+    Console.WriteLine(e.Message);
+}
 
+
+MyStack<string> mss = new MyStack<string>();
+mss.Push("hello");
+mss.Push("world");
+
+Console.WriteLine(mss.Pop());
+Console.WriteLine(mss.Pop());
+
+
+Console.ReadKey();

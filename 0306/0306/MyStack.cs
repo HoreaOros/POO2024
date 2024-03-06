@@ -1,8 +1,8 @@
 ﻿using System.Diagnostics;
 
-public class MyStack
+public class MyStack<T>
 {
-    private int[] data;
+    private T[] data;
     private int capacity = 16;
     private int size = 0;
     /// <summary>
@@ -11,7 +11,7 @@ public class MyStack
     public MyStack()
     {
         Console.Write($"Creating new stack with capacity {capacity}...");
-        data = new int[capacity];
+        data = new T[capacity];
         Console.WriteLine("success!");
     }
     /// <summary>
@@ -19,12 +19,12 @@ public class MyStack
     /// </summary>
     /// <returns></returns>
     /// <exception cref="StackEmptyException"></exception>
-    public int Pop()
+    public T Pop()
     {
         Console.WriteLine("Trying to Pop the stack...");
         if (size > 0)
         {
-            int ret = data[size - 1];
+            T ret = data[size - 1];
             if (size == capacity / 4)
                 resize(capacity / 2);
             Console.WriteLine("success!");
@@ -38,7 +38,7 @@ public class MyStack
     /// Adauga o noua valoare in stiva
     /// </summary>
     /// <param name="value">Valoarea care se adauga</param>
-    public void Push(int value)
+    public void Push(T value)
     {
         Console.WriteLine($"Trying to push {value} into the stack...");
         if (Count == capacity)
@@ -52,7 +52,7 @@ public class MyStack
     private void resize(int newCapacity)
     {
         Console.Write($"Resizing stack: old capacity = {capacity}, new capacity = {newCapacity}...");
-        int[] newdata = new int[newCapacity];
+        T[] newdata = new T[newCapacity];
         for (int i = 0; i < Count; i++)
         {
             newdata[i] = data[i];
@@ -62,7 +62,7 @@ public class MyStack
         Console.WriteLine("success");
     }
 
-    public int Peek()
+    public T Peek()
     {
         Console.Write("Try to peek into the stack...");
         if (size > 0)
