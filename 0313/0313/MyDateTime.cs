@@ -199,6 +199,5 @@ internal class MyDateTime : IEquatable<MyDateTime>, IComparable<MyDateTime>
             // din data mai mare scad o zi
         }
         return result;
-
     }
 }

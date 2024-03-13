@@ -3,12 +3,13 @@
 // ***********************************************
 // 1.  DateTime - demo
 DateTime dt = DateTime.Now;
+Console.WriteLine(dt.Ticks);
 Console.WriteLine(dt);
 
 DateTimeOffset dt2 = DateTimeOffset.Now;
 Console.WriteLine(dt2);
 
-DateTime dt3 = new DateTime(125487515558445855, DateTimeKind.Local);
+DateTime dt3 = new DateTime(1254875155584458555, DateTimeKind.Local);
 Console.WriteLine(dt3);
 
 
@@ -20,6 +21,7 @@ Console.WriteLine(DateTime.MaxValue);
 
 Console.WriteLine(dt.Year);
 Console.WriteLine(dt.Hour);
+
 Console.WriteLine(dt.DayOfWeek);
 Console.WriteLine(dt.DayOfYear);
 // ***********************************************
@@ -30,7 +32,7 @@ Console.WriteLine(dt.DayOfYear);
 // ***********************************************
 // ***********************************************
 // 2. MyDateTime - demo
-MyDateTime md = new MyDateTime(14, 3, 2023, 8, 59, 42);
+MyDateTime md = new MyDateTime(12, 3, 2024, 9, 18, 42);
 Console.WriteLine(md);
 
 MyDateTime md2 = new MyDateTime(23, 6, 2023);
