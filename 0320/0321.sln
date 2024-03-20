@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33424.131
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "0321", "0321\0321.csproj", "{D8D12185-7B06-408B-B77F-3BDB2EFD4A43}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rectangle", "Rectangle\Rectangle.csproj", "{C0A6148D-D47B-4D76-9D41-8929D51E0431}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RectangleTests", "RectangleTests\RectangleTests.csproj", "{8C173CB3-6C95-4EFE-A1D8-2D37E79E20F1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D8D12185-7B06-408B-B77F-3BDB2EFD4A43}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D8D12185-7B06-408B-B77F-3BDB2EFD4A43}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D8D12185-7B06-408B-B77F-3BDB2EFD4A43}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D8D12185-7B06-408B-B77F-3BDB2EFD4A43}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C0A6148D-D47B-4D76-9D41-8929D51E0431}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0A6148D-D47B-4D76-9D41-8929D51E0431}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0A6148D-D47B-4D76-9D41-8929D51E0431}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0A6148D-D47B-4D76-9D41-8929D51E0431}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8C173CB3-6C95-4EFE-A1D8-2D37E79E20F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C173CB3-6C95-4EFE-A1D8-2D37E79E20F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C173CB3-6C95-4EFE-A1D8-2D37E79E20F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C173CB3-6C95-4EFE-A1D8-2D37E79E20F1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1C6067D2-F71C-4EDB-8A32-E639C5FDE10C}
+	EndGlobalSection
+EndGlobal
