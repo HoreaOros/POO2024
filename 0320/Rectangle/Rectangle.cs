@@ -8,7 +8,8 @@ namespace Rectangle
         public int Height { get; private set; }
         public Rectangle(int x, int y, int width, int height)
         {
-            Origin = new Point { X = x, Y = y }; Width = width; Height = height;
+            Origin = new Point { X = x, Y = y }; 
+            Width = width; Height = height;
         }
         public Rectangle(Point p1, Point p2)
         {
@@ -20,14 +21,7 @@ namespace Rectangle
         {
             return $"[{Origin.ToString()}, Width = {Width}, Height = {Height}]";
         }
-        public int Perimeter()
-        {
-            return 2 * (Width + Height);
-        }
-        public int Area()
-        {
-            return Width * Height;
-        }
+        
 
         public bool IntersectsWith(Rectangle other)
         {
@@ -57,6 +51,15 @@ namespace Rectangle
                 return null;
 
             throw new NotImplementedException();
+        }
+
+        public int Perimeter()
+        {
+            return 2 * (Width + Height);
+        }
+        public int Area()
+        {
+            return Width * Height;
         }
     }
 }
