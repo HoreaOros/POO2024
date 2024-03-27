@@ -39,6 +39,10 @@ namespace Rectangle
 
             Interval[] intervals = new Interval[] { s1, s2 };
             Array.Sort(intervals);
+
+            Array.Sort(intervals, new EndComparer());
+
+
             return (s1.IntersectsWith(s1Other) && s2.IntersectsWith(s2Other));
         }
         /// <summary>

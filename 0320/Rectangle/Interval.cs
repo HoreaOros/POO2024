@@ -39,5 +39,9 @@
         {
             return !(this.End < other.Start || other.End < this.Start);
         }
+        public override string ToString()
+        {
+            return $"({Start}, {End})";
+        }
     }
 }
