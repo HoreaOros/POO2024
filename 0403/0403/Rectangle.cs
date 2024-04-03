@@ -1,7 +1,6 @@
-﻿internal class Rectangle
+﻿public class Rectangle: Shape
 {
     // properties
-    public Point Point { get; init; }
     public int Width{ get; init; }
     public int Height { get; init; }
 
@@ -12,4 +11,21 @@
         return $"[Origin: {Point}, Width = {Width}, Height = {Height}]";
     }
 
+    // ctor
+    public Rectangle(Point p, int width, int height): base(p)
+    {
+        Width = width;
+        Height = height;
+    }
+    public Rectangle()
+    {
+    }
+    public double Area()
+    {
+        return Width * Height;
+    }
+    public double Perimeter() 
+    {
+        return 2 * (Width + Height);
+    }
 }

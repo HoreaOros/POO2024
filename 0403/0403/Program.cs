@@ -10,3 +10,5 @@ Console.WriteLine($"Aria cercului {c} este {c.Area()}");
 
 Rectangle r = new Rectangle {Point = p, Width = 4, Height = 8 };
 Console.WriteLine(r);
+Console.WriteLine($"Perimetrul dreptunghiului {r} este {r.Perimeter()}");
+Console.WriteLine($"Aria dreptunghiului {r} este {r.Area()}");
