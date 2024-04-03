@@ -1,11 +1,11 @@
-﻿internal class Circle
+﻿internal class Circle : Shape
 {
-    // properties
-    public Point? Point { get; init; }
+
+    #region Properties
     public int Radius { get; init; }
+    #endregion
 
-
-    // c-tors
+    #region Constructors
     public Circle(Point p, int radius)
     {
         this.Point = p;
@@ -14,19 +14,21 @@
     public Circle()
     { 
     }
+    #endregion
 
-    // methods
+    #region Methods
     public override string ToString()
     {
         return $"[Origin: {Point}, Radius = {Radius}]";
     }
 
-    public double Area()
+    public override double Area()
     {
         return Math.PI * Math.Pow(Radius, 2);
     }
-    public double Perimeter() // lungimea cercului
+    public override double Perimeter() // lungimea cercului
     {
         return 2 * Math.PI * Radius;
     }
+    #endregion
 }
