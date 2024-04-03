@@ -1,4 +1,4 @@
-﻿internal class Point
+﻿public class Point
 {
     // fields
     private int x;
