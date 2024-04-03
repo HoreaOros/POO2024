@@ -19,11 +19,11 @@
         return $"[Center: {Point}, Radius: {radius}]";
     }
 
-    public double Area()
+    public override double Area()
     {
         return Math.PI * Math.Pow(radius, 2);
     }
-    public double Perimeter() // lungimea cercului/circumferinta
+    public override double Perimeter() // lungimea cercului/circumferinta
     {
         return 2 * Math.PI * radius;
     }
