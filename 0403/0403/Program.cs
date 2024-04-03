@@ -35,4 +35,10 @@ double totalArea = 0;
 foreach (Shape shape in shapes)
     totalArea += shape.Area();
 
+foreach(var item in shapes)
+{
+    Console.WriteLine(item);
+    Console.WriteLine($"Aria: {item.Area()}");
+}
+Console.WriteLine($"Aria totala: {totalArea}");
 
