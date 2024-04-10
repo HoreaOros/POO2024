@@ -83,6 +83,30 @@ namespace A
         {
             return $"{zi} {luna.ToMonthName()} {an}";
         }
+        public override bool Equals(object? obj)
+        {
+            if (obj == this)
+                return true;
+
+            if (obj == null)
+                return false;
+
+            if (obj.GetType() != this.GetType())
+                return false;
+
+            Date that = (Date)obj;
+            return (this.an == that.an && this.luna == that.luna && this.zi == that.zi);
+        }
+        public override int GetHashCode()
+        {
+            //int hash = 17;
+            //hash = 31 * hash + luna;
+            //hash = 31 * hash + zi;
+            //hash = 31 * hash + an;
+            //return hash;
+
+            return HashCode.Combine(an, luna, zi);
+        }
 
         public int CompareTo(Date? other)
         {
