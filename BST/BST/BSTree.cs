@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,27 +18,19 @@ namespace BST
 
         public void InorderTreeWalk()
         {
-            throw new NotImplementedException();
+            InorderTreeWalkHelper(Root);
         }
-//1    BST-Insert(T, z)
-//2      y := NIL
-//3      x := T.root
-//4      while x ≠ NIL do
-//5        y := x
-//6        if z.key<x.key then
-//7          x := x.left
-//8        else
-//9          x := x.right
-//10       end if
-//11     repeat
-//12     z.parent := y
-//13     if y = NIL then
-//14       T.root := z
-//15     else if z.key<y.key then
-//16       y.left := z
-//17     else
-//18       y.right := z
-//19     end if
+
+        private void InorderTreeWalkHelper(Node p)
+        {
+            if(p != null)
+            {
+                InorderTreeWalkHelper(p.Left);
+                Console.WriteLine($"{p.Key} -> ");
+                InorderTreeWalkHelper(p.Right);
+            }
+        }
+
         public void Insert(Node node)
         {
             Node y = null;
@@ -67,7 +60,17 @@ namespace BST
 
         public void PostorderTreeWalk()
         {
-            throw new NotImplementedException();
+            PostorderTreeWalkHelper(Root);
+        }
+
+        private void PostorderTreeWalkHelper(Node p)
+        {
+            if (p != null)
+            {
+                PostorderTreeWalkHelper(p.Left);
+                PostorderTreeWalkHelper(p.Right);
+                Console.WriteLine($"{p.Key} -> ");
+            }
         }
 
         public void PreorderTreeWalk()
