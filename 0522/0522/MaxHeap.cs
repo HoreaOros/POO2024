@@ -1,4 +1,6 @@
-﻿using System.Text.RegularExpressions;
+﻿using System.Collections;
+using System.Text;
+using System.Text.RegularExpressions;
 
 internal class MaxHeap
 {
@@ -6,6 +8,7 @@ internal class MaxHeap
     private int capacity;
     private int heapSize;
     private int[] A;
+
     #endregion
 
     #region Constructors
@@ -15,6 +18,18 @@ internal class MaxHeap
         A = new int[capacity + 1];
         heapSize = 0;
     }
+
+    public MaxHeap(int[] vector)
+    {
+        this.A = new int[vector.Length + 1];
+        for(int i = 0; i < vector.Length; i++)
+        {
+            A[i + 1] = vector[i];
+        }
+        this.HeapSize = vector.Length;
+        BuildMaxHeap();
+    }
+
     #endregion
 
     #region Properties
@@ -35,6 +50,7 @@ internal class MaxHeap
     public int HeapSize
     {
         get { return heapSize; }
+        private set { heapSize = value; }
     }
 
     #endregion
@@ -62,6 +78,24 @@ internal class MaxHeap
             MaxHeapify(largest);
         }
     }
+    private void BuildMaxHeap()
+    {
+        for (int i = HeapSize / 2; i >= 1; i--)
+            MaxHeapify(i);
+    }
+
+    public override string ToString()
+    {
+        StringBuilder sb = new StringBuilder();
+
+        for (int i = 1; i <= HeapSize; i++)
+        {
+            sb.Append(A[i]);
+            sb.Append(" ");
+        }
+        return sb.ToString();
+    }
+
     #endregion
 
 
