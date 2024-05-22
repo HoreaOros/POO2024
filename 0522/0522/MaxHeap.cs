@@ -1,13 +1,14 @@
 ﻿using System.Collections;
+using System.Collections.Generic;
 using System.Text;
 using System.Text.RegularExpressions;
 
-internal class MaxHeap
+internal class MaxHeap<T> where T: IComparable
 {
     #region Fields
     private int capacity;
     private int heapSize;
-    private int[] A;
+    private T[] A;
 
     #endregion
 
@@ -15,13 +16,13 @@ internal class MaxHeap
     public MaxHeap(int capacity)
     {
         this.capacity = capacity;
-        A = new int[capacity + 1];
+        A = new T[capacity + 1];
         heapSize = 0;
     }
 
-    public MaxHeap(int[] vector)
+    public MaxHeap(T[] vector)
     {
-        this.A = new int[vector.Length + 1];
+        this.A = new T[vector.Length + 1];
         for(int i = 0; i < vector.Length; i++)
         {
             A[i + 1] = vector[i];
@@ -64,12 +65,12 @@ internal class MaxHeap
         int l, r, largest;
         l = Left(i);
         r = Right(i);
-        if (l <= HeapSize && A[i] < A[l])
+        if (l <= HeapSize && A[i].CompareTo(A[l]) < 0)
             largest = l;
         else
             largest = i;
 
-        if(r <= HeapSize && A[largest] < A[r])
+        if(r <= HeapSize && A[largest].CompareTo(A[r]) < 0)
             largest = r;
 
         if(largest != i)
@@ -95,7 +96,6 @@ internal class MaxHeap
         }
         return sb.ToString();
     }
-
     #endregion
 
 
